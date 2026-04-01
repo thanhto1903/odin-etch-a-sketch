@@ -21,7 +21,8 @@ userInput.addEventListener("keydown", function () {
 container.addEventListener("mouseover", (event) => {
   if (event.target.className === "box") {
     const targetBox = event.target;
-    targetBox.classList.add("changeBackgroundColor");
+    // targetBox.classList.add("changeBackgroundColor");
+    targetBox.style.backgroundColor = generateRandomRgbColor();
   }
 });
 
@@ -41,5 +42,14 @@ function createBox(boxWidth) {
   newBox.style.height = `${boxWidth}%`;
   container.appendChild(newBox);
 }
+
+function generateRandomRgbColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+function addBackgroudColorToBox() {}
 
 // Remove class container
