@@ -8,11 +8,13 @@
 
 const userInput = document.getElementById("userInput");
 let boxNumber;
+let boxNumberSquare;
 let boxWidth;
 userInput.addEventListener("keydown", function () {
   if (event.key === "Enter") {
     event.preventDefault();
     boxNumber = userInput.value;
+    boxNumberSquare = boxNumber * boxNumber;
     boxWidth = calBoxWidth(boxNumber);
   }
 });
