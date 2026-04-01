@@ -1,5 +1,6 @@
 const userInput = document.getElementById("userInput");
 const container = document.querySelector(".container");
+const resetBtn = document.querySelector("#resetBtn");
 let boxNumber;
 let boxNumberSquare;
 let boxWidth;
@@ -22,6 +23,10 @@ container.addEventListener("mouseover", (event) => {
     const targetBox = event.target;
     targetBox.classList.add("changeBackgroundColor");
   }
+});
+
+resetBtn.addEventListener("click", () => {
+  container.replaceChildren();
 });
 
 function calBoxWidth(boxNumber) {
