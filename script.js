@@ -7,19 +7,33 @@
 // }
 
 const userInput = document.getElementById("userInput");
+const container = document.querySelector(".container");
 let boxNumber;
 let boxNumberSquare;
 let boxWidth;
+
 userInput.addEventListener("keydown", function () {
   if (event.key === "Enter") {
     event.preventDefault();
     boxNumber = userInput.value;
     boxNumberSquare = boxNumber * boxNumber;
     boxWidth = calBoxWidth(boxNumber);
+
+    for (let i = 0; i < boxNumberSquare; i++) {
+      createBox(boxWidth);
+    }
   }
 });
 
 function calBoxWidth(boxNumber) {
   let boxWidthHeight = 960 / boxNumber;
   return boxWidthHeight;
+}
+
+function createBox(boxWidth) {
+  const newBox = document.createElement("div");
+  newBox.className = "box";
+  newBox.setAttribute("width", `${boxWidth}`);
+  newBox.setAttribute("height", `${boxWidth}`);
+  container.appendChild(newBox);
 }
