@@ -21,8 +21,18 @@ userInput.addEventListener("keydown", function () {
 container.addEventListener("mouseover", (event) => {
   if (event.target.className === "box") {
     const targetBox = event.target;
-    // targetBox.classList.add("changeBackgroundColor");
-    targetBox.style.backgroundColor = generateRandomRgbColor();
+    targetBox.classList.add("changeBackgroundColor");
+    let currentOpacity = Number(targetBox.style.opacity);
+    if (currentOpacity === 0) {
+      currentOpacity = 0.1;
+    }
+    // let newOpacity = currentOpacity;
+    if (currentOpacity < 1) {
+      currentOpacity += 0.1;
+    }
+    targetBox.style.opacity = `${currentOpacity}`;
+    console.log(currentOpacity);
+    // targetBox.style.backgroundColor = generateRandomRgbColor();
   }
 });
 
