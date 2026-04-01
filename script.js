@@ -26,14 +26,16 @@ userInput.addEventListener("keydown", function () {
 });
 
 function calBoxWidth(boxNumber) {
-  let boxWidthHeight = 960 / boxNumber;
+  let boxWidthHeight = 100 / boxNumber;
   return boxWidthHeight;
 }
 
 function createBox(boxWidth) {
   const newBox = document.createElement("div");
   newBox.className = "box";
-  newBox.setAttribute("width", `${boxWidth}`);
-  newBox.setAttribute("height", `${boxWidth}`);
+  newBox.style.width = `${boxWidth}%`;
+  newBox.style.height = `${boxWidth}%`;
   container.appendChild(newBox);
 }
+
+// Remove class container
