@@ -1,11 +1,3 @@
-// function getUserInput() {
-//   const userInput = document.getElementById("userInput");
-//   userInput.addEventListener("input", function () {
-//     let currentInput = userInput.value;
-//   });
-//   return currentInput;
-// }
-
 const userInput = document.getElementById("userInput");
 const container = document.querySelector(".container");
 let boxNumber;
@@ -22,6 +14,13 @@ userInput.addEventListener("keydown", function () {
     for (let i = 0; i < boxNumberSquare; i++) {
       createBox(boxWidth);
     }
+  }
+});
+
+container.addEventListener("mouseover", (event) => {
+  if (event.target.className === "box") {
+    const targetBox = event.target;
+    targetBox.classList.add("changeBackgroundColor");
   }
 });
 
